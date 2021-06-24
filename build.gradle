@@ -1,0 +1,33 @@
+plugins {
+    id 'application'
+}
+
+application {
+    mainModule = 'id.my.berviantoleo.pdfUtil'
+    mainClass = 'id.my.berviantoleo.pdfUtil.PDFUtil'
+}
+
+group 'id.my.berviantoleo.pdfUtil'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'org.apache.pdfbox', name: 'pdfbox', version: '2.0.24'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'id.my.berviantoleo.pdfUtil.PDFUtil'
+        )
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
