@@ -15,6 +15,7 @@
  */
 package id.my.berviantoleo.pdfUtil;
 
+import org.apache.pdfbox.Loader;
 import org.apache.pdfbox.pdmodel.PDDocument;
 
 import java.io.IOException;
@@ -40,7 +41,7 @@ public class MultiPdf {
             var docs = new PDDocument();
             while (iterator.hasNext()) {
                 var currentPath = iterator.next();
-                var doc = PDDocument.load(Files.readAllBytes(currentPath));
+                var doc = Loader.loadPDF(Files.readAllBytes(currentPath));
                 var pages = doc.getPages();
                 pages.forEach(docs::addPage);
                 doc.close();
