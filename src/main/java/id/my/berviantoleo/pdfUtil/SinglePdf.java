@@ -16,6 +16,7 @@
 package id.my.berviantoleo.pdfUtil;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.Loader;
 import org.apache.pdfbox.pdmodel.encryption.InvalidPasswordException;
 
 import java.io.File;
@@ -35,7 +36,7 @@ public class SinglePdf {
         try {
             System.out.println("Remove PDF Password");
             File file = new File(source);
-            PDDocument doc = PDDocument.load(file, password);
+            PDDocument doc = Loader.loadPDF(file, password);
             System.out.printf("PDFEncrypt: %b, totalPages: %d \n", doc.isEncrypted(), doc.getPages().getCount());
             doc.setAllSecurityToBeRemoved(true);
             doc.save(target);
