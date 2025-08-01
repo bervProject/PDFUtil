@@ -16,8 +16,8 @@ repositories {
 
 dependencies {
     implementation group: 'org.apache.pdfbox', name: 'pdfbox', version: '3.0.5'
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.13.2'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.13.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.13.4'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.13.4'
 }
 
 jar {
