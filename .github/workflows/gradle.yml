@@ -30,7 +30,7 @@ jobs:
       run: |
         ./gradlew distTar
         ./gradlew distZip
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v5
       with:
         name: artifact-${{ matrix.java-version }}
         path: build/distributions/
